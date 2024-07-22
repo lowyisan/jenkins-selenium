@@ -15,7 +15,7 @@ pipeline {
 					agent {
 						docker {
 							image 'maven' 
-							args '-u root' 
+							args '--platform linux/amd64 -u root' 
 						}
 					}
 					steps {
