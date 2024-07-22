@@ -6,4 +6,4 @@ sleep 1
 set +x
 
 echo 'Now...'
-echo 'Visit http://localhost:8081 to see your PHP application in action.'
+echo 'Visit http://localhost:8082 to see your PHP application in action.'
