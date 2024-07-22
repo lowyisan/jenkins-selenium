@@ -6,6 +6,7 @@ pipeline {
                 stage('Deploy') {
                     agent any
                     steps {
+                        sh 'which dos2unix || (sudo apt-get update && sudo apt-get install -y dos2unix)'
                         sh 'dos2unix ./jenkins/scripts/deploy.sh'
                         sh 'chmod +x ./jenkins/scripts/deploy.sh'
                         sh './jenkins/scripts/deploy.sh'
@@ -17,8 +18,8 @@ pipeline {
                 stage('Headless Browser Test') {
                     agent {
                         docker {
-                            image 'maven' 
-                            args '--platform linux/amd64 -u root' 
+                            image 'maven'
+                            args '--platform linux/amd64 -u root'
                         }
                     }
                     steps {
